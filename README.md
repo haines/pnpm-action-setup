@@ -50,6 +50,10 @@ If `run_install` is a YAML string representation of either an object or an array
 
 **Optional** (_type:_ `string|string[]`, _default:_ `pnpm-lock.yaml`) File path to the pnpm lockfile, which contents hash will be used as a cache key.
 
+### `cache_key_prefix`
+
+**Optional** (_type:_ `string`) Prefix to differentiate multiple caches, e.g. when [installing subsets of packages](https://pnpm.io/filtering).
+
 ### `package_json_file`
 
 **Optional** (_type:_ `string`, _default:_ `package.json`) File path to the `package.json`/[`package.yaml`](https://github.com/pnpm/pnpm/pull/1799) to read "packageManager" configuration.

@@ -7,6 +7,7 @@ export interface Inputs {
   readonly dest: string
   readonly cache: boolean
   readonly cacheDependencyPath: string
+  readonly cacheKeyPrefix: string
   readonly runInstall: RunInstall[]
   readonly packageJsonFile: string
   readonly standalone: boolean
@@ -23,6 +24,7 @@ export const getInputs = (): Inputs => ({
   dest: parseInputPath('dest'),
   cache: getBooleanInput('cache'),
   cacheDependencyPath: parseInputPath('cache_dependency_path'),
+  cacheKeyPrefix: getInput('cache_key_prefix'),
   runInstall: parseRunInstall('run_install'),
   packageJsonFile: parseInputPath('package_json_file'),
   standalone: getBooleanInput('standalone'),

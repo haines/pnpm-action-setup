@@ -14,7 +14,8 @@ export async function runRestoreCache(inputs: Inputs) {
     throw new Error('Some specified paths were not resolved, unable to cache dependencies.')
   }
 
-  const primaryKey = `pnpm-cache-${process.env.RUNNER_OS}-${os.arch()}-${fileHash}`
+  const keyPrefix = inputs.cacheKeyPrefix && `${inputs.cacheKeyPrefix}-`
+  const primaryKey = `pnpm-cache-${process.env.RUNNER_OS}-${os.arch()}-${keyPrefix}${fileHash}`
   debug(`Primary key is ${primaryKey}`)
   saveState('cache_primary_key', primaryKey)
 
